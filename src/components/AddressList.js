@@ -8,7 +8,6 @@ function AddressList({data}) {
     const [addressPerPage,setAddressPerPage] = useState(7);
 
     useEffect(() => {
-        console.log(data.length);
         setTotal(data.length);
     });
 
