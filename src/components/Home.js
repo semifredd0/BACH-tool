@@ -18,9 +18,21 @@ function Home() {
                 constructed using the following heuristics:
             </p>
             <ul>
-                <li>Multi-Input Clustering Heuristic</li>
-                <li>Coinbase Clustering Heuristic</li>
-                <li>Change Address Clustering Heuristic</li>
+                <li><div className="box orange"/>
+                    <div className="text-div">Multi-Input Clustering Heuristic</div></li>
+                <li><div className="box green"/>
+                    <div className="text-div">Coinbase Clustering Heuristic</div></li>
+                <li><div className="box cyan"/>
+                    <div className="text-div">Change Address Clustering Heuristic</div></li>
+            </ul>
+            <p className="description">
+                In addition, two types of addresses are identified:
+            </p>
+            <ul>
+                <li><div className="box blue"/>
+                    <div className="text-div">Non-miner address</div></li>
+                <li><div className="box lime"/>
+                    <div className="text-div">Miner address</div></li>
             </ul>
             <p className="description">
                 The tool, besides indicating all the addresses present in the cluster, allows to visualize the relations
@@ -33,6 +45,7 @@ function Home() {
                 <li><a href="http://localhost:3000/1FYNnV2ZVFBXFFrvZhDHFDGfrZyWXLBAEA">Cluster 2</a></li>
                 <li><a href="http://localhost:3000/1GQ57FAHzBYHe1NcENCvvp3iG6xAoc9Se5">Cluster 3</a></li>
             </ul>
+            <p className="description" />
         </div>
     );
 }

@@ -1,5 +1,6 @@
 .Home {
     background-color: lightgray;
+    padding: 0;
 }
 .title-box {
     display: flex;
@@ -27,11 +28,37 @@
     font-weight: bold;
     color: black;
     text-decoration: none;
-    padding-left: 0.8em;
+    padding-left: 0.9em;
 }
 .description {
     font-size: 1.1em;
     text-align: left;
     padding-left: 1em;
     margin: 0;
+}
+
+.box {
+    float: left;
+    height: 20px;
+    width: 20px;
+    border: 2px solid black;
+    margin-right: 5px;
+}
+.text-div {
+    float: left;
+}
+.orange {
+    background-color: orange;
+}
+.green {
+    background-color: green;
+}
+.cyan {
+    background-color: cyan;
+}
+.lime {
+    background-color: limegreen;
+}
+.blue {
+    background-color: dodgerblue;
 }

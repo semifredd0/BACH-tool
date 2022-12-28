@@ -17,7 +17,7 @@ class MyClusterGraph extends React.Component {
             links: this.props.data2.map((row) => {
                 let source = row.address_id_1;
                 let target = row.address_id_2;
-                let linkVisibility = row.link_visible_size <= 40;
+                let linkVisibility = row.link_visible_size <= 50;
                 let linkColor;
                 if (row.link_type === 0)    linkColor = "yellow";
                 else if (row.link_type === 1)   linkColor = "FF7600";
@@ -41,6 +41,7 @@ class MyClusterGraph extends React.Component {
                     nodeLabel="addressHash"
                     nodeColor="nodeColor"
                     linkColor="linkColor"
+                    enableNodeDrag={false}
                     linkOpacity={0.4}
                     nodeOpacity={0.8} />
             </div>

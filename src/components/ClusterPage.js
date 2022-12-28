@@ -7,6 +7,7 @@ import NavBar from "./NavBar";
 function ClusterPage(props) {
     const [cluster, setCluster] = useState([]);
     const [subCluster, setSubCluster] = useState([]);
+    const [empty, setEmpty] = useState(false);
 
     useEffect(() => {
         fetchData1();
@@ -19,6 +20,7 @@ function ClusterPage(props) {
             params: {address: address}
         });
         const data = await response.data;
+        if(data.length <= 0) setEmpty(true);
         setCluster(data);
     }
 
@@ -30,9 +32,10 @@ function ClusterPage(props) {
         setSubCluster(await response.data);
     }
 
-    if (cluster.length <= 0 || subCluster.length <= 0) {
+    if (empty)
+        return <p>Address or cluster not found!</p>;
+    if (cluster.length <= 0 || subCluster.length <= 0)
         return <p>Loading...</p>;
-    }
 
     return (
         <div key={props.match.params.id}>
