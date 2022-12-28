@@ -1,20 +1,20 @@
 .nav-container {
     display: flex;
     justify-content: space-between;
-    background-color: #3e3e3e;
+    background-color: #5e5e5e;
     align-items: center;
-    padding: 0.5em 1em;
+    padding: 0.5em;
 }
 
 .nav-title a{
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: bold;
     color: white;
     text-decoration: none;
 }
 
 .nav-title a:hover{
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: bold;
     color: white;
     text-decoration: none;

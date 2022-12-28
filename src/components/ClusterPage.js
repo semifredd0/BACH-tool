@@ -1,7 +1,8 @@
 import React, {Fragment, useEffect, useState} from "react";
 import AddressList from "./AddressList";
-import ClusterGraph from "./ClusterGraph";
 import axios from "axios";
+import ClusterGraph from "./ClusterGraph";
+import NavBar from "./NavBar";
 
 function ClusterPage(props) {
     const [cluster, setCluster] = useState([]);
@@ -26,12 +27,16 @@ function ClusterPage(props) {
         const response = await axios.get('http://localhost:5000/sub/', {
             params: {address: address}
         });
-        const data = await response.data;
-        setSubCluster(data);
+        setSubCluster(await response.data);
+    }
+
+    if (cluster.length <= 0 || subCluster.length <= 0) {
+        return <p>Loading...</p>;
     }
 
     return (
         <div key={props.match.params.id}>
+            <NavBar />
             <Fragment>
                 <AddressList data={cluster} />
                 <ClusterGraph data1={cluster} data2={subCluster} />

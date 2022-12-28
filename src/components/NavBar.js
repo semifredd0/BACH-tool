@@ -1,5 +1,5 @@
 import '../styles/NavBar.css';
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
 
 const NavBar = () => {
@@ -8,7 +8,9 @@ const NavBar = () => {
         <nav>
             <div className="nav-container">
                 <div className="nav-title">
-                    <a href="/">Bitcoin Address Clustering</a>
+                    <a href="/">
+                        <img src="logo.png" height="50"/>Bach
+                    </a>
                 </div>
                 <div className="nav-search">
                     <form>
