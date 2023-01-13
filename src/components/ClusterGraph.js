@@ -1,6 +1,5 @@
 import '../styles/ClusterGraph.css';
 import ForceGraph3D from 'react-force-graph-3d';
-import {useHistory} from 'react-router-dom';
 import React from "react";
 
 class MyClusterGraph extends React.Component {
@@ -24,8 +23,9 @@ class MyClusterGraph extends React.Component {
                 let linkColor;
                 if (row.link_type === 0)    linkColor = "green";
                 else if (row.link_type === 1)   linkColor = "orange";
-                else if (row.link_type === 2)   linkColor = "00FFF6";
-                return { source: source, target: target, linkColor: linkColor, linkVisibility: linkVisibility};
+                else if (row.link_type === 2)   linkColor = "rgb(0, 255, 255)";
+                // Invert source and target for the directional arrow in the graph
+                return { source: target, target: source, linkColor: linkColor, linkVisibility: linkVisibility};
             }),
         };
     }
@@ -38,7 +38,7 @@ class MyClusterGraph extends React.Component {
                     backgroundColor="black"
                     width={700}
                     height={400}
-                    nodeRelSize={10}
+                    nodeVal={node => node.addressHash === this.props.address ? 30 : 10}
                     linkWidth={2}
                     linkVisibility="linkVisibility"
                     nodeLabel="addressHash"
@@ -47,6 +47,11 @@ class MyClusterGraph extends React.Component {
                     enableNodeDrag={false}
                     linkOpacity={0.4}
                     nodeOpacity={0.8}
+                    linkDirectionalArrowColor={0x00ffff}
+                    linkDirectionalArrowLength={10}
+                    linkDirectionalArrowRelPos={link => {
+                        if(link.linkColor === "rgb(0, 255, 255)") return 1;
+                    }}
                     onNodeClick={node => {
                         window.location.href = "http://localhost:3000/info/" + node.addressHash;
                     }} />
