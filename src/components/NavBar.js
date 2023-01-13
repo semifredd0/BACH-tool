@@ -9,7 +9,7 @@ const NavBar = () => {
             <div className="nav-container">
                 <div className="nav-title">
                     <a href="/">
-                        <img src="logo.png" height="50"/>Bach
+                        <img src="/logo.png" height="50"/>Bach
                     </a>
                 </div>
                 <div className="nav-search">

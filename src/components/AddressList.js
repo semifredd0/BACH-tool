@@ -20,7 +20,7 @@ function AddressList({data}) {
             <div className="card1">
                 <div className="card-body">
                     <p>Addresses in the cluster: {data.length}</p>
-                    <table className="table table-bordered">
+                    <table className="table table-hover">
                         <tbody>
                             {currentAddresses.map((address,index) => (
                                 <tr key={index}>

@@ -26,9 +26,11 @@ function Home() {
                     <div className="text-div">Change Address Clustering Heuristic</div></li>
             </ul>
             <p className="description">
-                In addition, two types of addresses are identified:
+                In addition, three types of addresses are identified:
             </p>
             <ul>
+                <li><div className="box red"/>
+                    <div className="text-div">Address searched</div></li>
                 <li><div className="box blue"/>
                     <div className="text-div">Non-miner address</div></li>
                 <li><div className="box lime"/>
@@ -37,6 +39,8 @@ function Home() {
             <p className="description">
                 The tool, besides indicating all the addresses present in the cluster, allows to visualize the relations
                 present between the various addresses in a 3D graph.<br/>
+                Moreover, by clicking on a node within the graph, you can view all the list of relations of that address
+                with its type of heuristic.<br/>
                 Note: the displayed data was collected in the first 150,000 blocks.<br/>
                 Here are some examples of clusters found:
             </p>

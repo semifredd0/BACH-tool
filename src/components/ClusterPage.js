@@ -7,11 +7,13 @@ import NavBar from "./NavBar";
 function ClusterPage(props) {
     const [cluster, setCluster] = useState([]);
     const [subCluster, setSubCluster] = useState([]);
+    const [address, setAddress] = useState("");
     const [empty, setEmpty] = useState(false);
 
     useEffect(() => {
         fetchData1();
         fetchData2();
+        setAddress(props.match.params.addressHash);
     },[]);
 
     const fetchData1 = async () => {
@@ -42,7 +44,7 @@ function ClusterPage(props) {
             <NavBar />
             <Fragment>
                 <AddressList data={cluster} />
-                <ClusterGraph data1={cluster} data2={subCluster} />
+                <ClusterGraph address={address} data1={cluster} data2={subCluster} />
             </Fragment>
         </div>
     );
